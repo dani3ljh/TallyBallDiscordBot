@@ -29,6 +29,9 @@ module.exports = {
     // botPermissions: [PermissionFlagsBits.KickMembers],
 
     callback: (client, interaction) => {
-        interaction.reply(`${interaction.user.username} has timed out ${interaction.options._hoistedOptions.find(option => option.name === 'target-user').user.username} for ${interaction.options._hoistedOptions.find(option => option.name === 'length').value} seconds (i havent implemented this)`);
+        let reply = `${interaction.user.username} has timed out `;
+        reply    += `${interaction.options._hoistedOptions.find(option => option.name === 'target-user').user.username} for `;
+        reply    += `${interaction.options._hoistedOptions.find(option => option.name === 'length').value} seconds (I haven't implemented this)`;
+        interaction.reply(reply);
     },
 }
